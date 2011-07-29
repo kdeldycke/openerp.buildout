@@ -1,0 +1,26 @@
+Installation
+------------
+
+This was tested under Ubuntu 11.04.
+
+I know it's bad, but for convenience, all the commands below should be run as root.
+
+1. Install system dependencies using your favorite package manager. Here is the
+   example for an Ubuntu machine:
+
+     $ apt-get install xxxxxxxxxxxxxx
+
+2. Initialize the buildout environment:
+
+     $ python ./bootstrap.py --distribute
+
+3. Run buildout itself:
+
+     $ ./bin/buildout
+
+4. Launch the servers:
+
+     $ /etc/init.d/postgresql restart
+     $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/openerp-server"
+
+
