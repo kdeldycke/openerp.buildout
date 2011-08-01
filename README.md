@@ -21,6 +21,8 @@ I know it's bad, but for convenience, all the commands below should be run as ro
 
         $ python ./bootstrap.py --distribute
 
+1. Set the `extend` parameter of the `[buildout]` section of `buildout.cfg` to either `openerp-trunk.cfg` or `openerp-6.0.cfg` depending of the version of OpenERP you want to work with.
+
 1. Run buildout itself:
 
         $ ./bin/buildout
