@@ -1,5 +1,5 @@
-opener.buildout
-===============
+openerp.buildout
+================
 
 This is a quick and dirty buildout to help me generate OpenERP instances for tests and development.
 
