@@ -19,19 +19,18 @@ I know it's bad, but for convenience, all the commands below should be run as ro
 
 1. Initialize the buildout environment:
 
-     $ python ./bootstrap.py --distribute
+        $ python ./bootstrap.py --distribute
 
-2. Run buildout itself:
+1. Run buildout itself:
 
-     $ ./bin/buildout
+        $ ./bin/buildout
 
-3. Launch the servers:
+1. Launch the servers:
 
-     $ /etc/init.d/postgresql restart
-     $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/openerp-server" &
-     $ su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
+        $ /etc/init.d/postgresql restart
+        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/openerp-server" &
+        $ su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
 
-4. Then with your browser, go to:
+1. Then with your browser, go to:
 
-     http://127.0.0.1:8080
-
+        http://127.0.0.1:8080
