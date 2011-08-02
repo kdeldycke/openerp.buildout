@@ -30,7 +30,7 @@ I know it's bad, but for convenience, all the commands below should be run as ro
 1. Launch the servers:
 
         $ /etc/init.d/postgresql restart
-        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/openerp-server --addons-path=./parts/openerp/server/bin/addons" &
+        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --addons-path=./parts/openerp/server/bin/addons" &
         $ su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
 
 1. Then with your browser, go to:
