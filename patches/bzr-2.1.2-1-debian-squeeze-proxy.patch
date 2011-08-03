@@ -1,5 +1,5 @@
---- ./bzrlib/transport/http/_urllib2_wrappers.py.orig	2011-08-03 14:42:28.482035518 +0000
-+++ ./bzrlib/transport/http/_urllib2_wrappers.py	2011-08-03 14:46:29.946036475 +0000
+--- bzrlib/transport/http/_urllib2_wrappers.py.orig	2011-08-03 14:42:28.482035518 +0000
++++ bzrlib/transport/http/_urllib2_wrappers.py	2011-08-03 14:46:29.946036475 +0000
 @@ -378,6 +378,11 @@
              port = conn_class.default_port
          self.proxied_host = '%s:%s' % (host, port)
