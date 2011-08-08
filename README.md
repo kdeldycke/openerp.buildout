@@ -27,19 +27,29 @@ I know it's bad, but for convenience, all the commands below should be run as ro
 
         $ ./bin/buildout
 
-1. Launch the servers:
+1. Start the PostgreSQL server:
 
         $ /etc/init.d/postgresql restart
+
+1. Optionnaly, you can update all OpenERP modules:
+
+        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --addons-path=./parts/openerp/server/bin/addons --debug --stop-after-init -u all"
+
+1. Then you can launch the OpenERP server in the background:
+
         $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --addons-path=./parts/openerp/server/bin/addons --debug" &
+
+1. Now you can run the web client the same way:
+
         $ su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
 
-1. Or update all modules of all activated databases:
-
-        $ su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py -u all" &
-
-1. Then with your browser, go to:
+1. To play with your OpenERP instance, all you have to do is to point your browser to:
 
         http://127.0.0.1:8080
+
+1. Finally, if you want to kill OpenERP's server and client processes, you may use the command below:
+
+        $ kill `ps -ef | grep openerp-shell | awk '{print $2}'` 
 
 
 Proxy
