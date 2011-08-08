@@ -31,9 +31,9 @@ I know it's bad, but for convenience, all the commands below should be run as ro
 
         $ /etc/init.d/postgresql restart
 
-1. Optionnaly, you can update all OpenERP modules:
+1. Optionnaly, you can update all OpenERP modules of a given database. Here is the command for the `kevin_test` database:
 
-        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --addons-path=./parts/openerp/server/bin/addons --debug --stop-after-init -u all"
+        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --addons-path=./parts/openerp/server/bin/addons --debug -u all -d kevin_test"
 
 1. Then you can launch the OpenERP server in the background:
 
