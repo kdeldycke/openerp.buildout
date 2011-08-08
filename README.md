@@ -30,7 +30,7 @@ I know it's bad, but for convenience, all the commands below should be run as ro
 1. Launch the servers:
 
         $ /etc/init.d/postgresql restart
-        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --addons-path=./parts/openerp/server/bin/addons" &
+        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --addons-path=./parts/openerp/server/bin/addons --debug" &
         $ su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
 
 1. Or update all modules of all activated databases:
