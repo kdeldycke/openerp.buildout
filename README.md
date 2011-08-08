@@ -33,6 +33,10 @@ I know it's bad, but for convenience, all the commands below should be run as ro
         $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --addons-path=./parts/openerp/server/bin/addons" &
         $ su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
 
+1. Or update all modules of all activated databases:
+
+        $ su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py -u all" &
+
 1. Then with your browser, go to:
 
         http://127.0.0.1:8080
