@@ -76,7 +76,6 @@ s
 TODO
 ----
 
-  * Reverse the extend mecanism
   * Don't call apt-get directly
   * Use as much packages as available on PyPi (even if this imply intalling gcc on our local machine)
   * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
