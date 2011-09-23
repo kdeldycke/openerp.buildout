@@ -79,7 +79,6 @@ TODO
 
   * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
   * Consider using and contributing to http://pypi.python.org/pypi/anybox.recipe.openerp
-  * Generate Apache config file dynamiccaly
   * Get inspiration from http://github.com/kalymero/OpenERP-Buildout ?
 
 

@@ -5,11 +5,11 @@
     SSLCertificateFile /etc/apache2/ssl/openerp.example.com.cert
     SSLCertificateKeyFile /etc/apache2/ssl/openerp.example.com.key
 
-    DocumentRoot /home/openerp/openerp.buildout/parts/openerp/web-client
+    DocumentRoot ${openerp:location}/web-client
     ProxyPass /openerp/static/ !
     ProxyPass /openobject/static/ !
-    Alias /openerp/static/    /home/openerp/openerp.buildout/parts/openerp/web-client/addons/openerp/static/
-    Alias /openobject/static/ /home/openerp/openerp.buildout/parts/openerp/web-client/openobject/static/
+    Alias /openerp/static/    ${openerp:location}/web-client/addons/openerp/static/
+    Alias /openobject/static/ ${openerp:location}/web-client/openobject/static/
 
     ExpiresActive On
     ExpiresByType text/css "now plus 1 month"
