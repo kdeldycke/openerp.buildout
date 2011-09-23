@@ -1,9 +1,9 @@
 <VirtualHost *:443>
-    ServerName openerp.example.com
+    ServerName ${openerp:web-domain}
 
     SSLEngine on
-    SSLCertificateFile /etc/apache2/ssl/openerp.example.com.cert
-    SSLCertificateKeyFile /etc/apache2/ssl/openerp.example.com.key
+    SSLCertificateFile /etc/apache2/ssl/${openerp:web-domain}.cert
+    SSLCertificateKeyFile /etc/apache2/ssl/${openerp:web-domain}.key
 
     DocumentRoot ${openerp:location}/web-client
     ProxyPass /openerp/static/ !
@@ -41,8 +41,8 @@
     # Fix IE problem (http error 408/409)
     SetEnv proxy-nokeepalive 1
 
-    ErrorLog /var/log/apache2/openerp-ssl-error.log
-    CustomLog /var/log/apache2/openerp-ssl-access.log combined
+    ErrorLog /var/log/apache2/${openerp:web-domain}-ssl-error.log
+    CustomLog /var/log/apache2/${openerp:web-domain}-ssl-access.log combined
 
     CacheIgnoreHeaders Set-Cookie
     CacheEnable disk /
@@ -51,7 +51,7 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-    ServerName openerp.example.com
+    ServerName ${openerp:web-domain}
 
-    RedirectMatch .* https://openerp.example.com/
+    RedirectMatch .* https://${openerp:web-domain}/
 </VirtualHost>
