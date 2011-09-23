@@ -64,6 +64,29 @@ Behind a proxy ? Just set the appropriate environment variables to let Subversio
 Note that some versions of Bazaar are affected by a bug ( http://bugs.launchpad.net/bzr/+bug/558343 ) which doesn't let you pass a proxy. In my case, the bzr-2.1.2-1 package available on my Debian Squeeze was affected by such a bug. To fix this, I just applied the patch proposed at http://code.edge.launchpad.net/~lifeless/bzr/bug-558343-wrong-host-with-proxy/+merge/24938 .
 
 
+Locale
+------
+
+You may encounter this issue when Bazaar commands are run:
+
+	bzr: warning: unsupported locale setting
+  	  bzr could not set the application locale.
+  	  Although this should be no problem for bzr itself,
+  	  it might cause problems with some plugins.
+  	  To investigate the issue, look at the output
+  	  of the locale(1p) tool available on POSIX systems.
+
+This can be fixed by forcing your locale to more sane defaults.
+
+Here is how I did it on Debian Squeeze ([source](http://wiki.debian.org/Locale)):
+
+	$ echo "LANG=en_US.UTF-8" >> /etc/default/locale
+	$ echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+        $ locale-gen
+
+Then I had to log out and back in to have the environment variables set to the new defaults.
+
+
 Apache
 ------
 
