@@ -18,7 +18,7 @@ I know it's bad, but for convenience, all the commands below should be run as ro
     * Here is for Debian Squeeze:
 
             $ apt-get update
-            $ apt-get install sudo python-dev gcc bzr subversion postgresql libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libxslt1-dev
+            $ apt-get install sudo python-dev gcc bzr subversion postgresql libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libxslt1-dev libpq-dev
 
 1. Initialize the buildout environment:
 
