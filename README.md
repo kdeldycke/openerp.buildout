@@ -1,21 +1,24 @@
 openerp.buildout
 ================
 
-This is a quick and dirty buildout to generate OpenERP instances for tests and development.
+This is a buildout-based project to generate OpenERP instances for tests and development.
 
 It is far from mature enough to be used in production, but feel free to send patches to help me improve this situation.
 
 This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
-
-Other similar projects:
-
-  * http://github.com/kalymero/OpenERP-Buildout
 
 
 Installation
 ------------
 
 I know it's bad, but for convenience, all the commands below should be run as root.
+
+1. Install required dependencies with your favorite package installer.
+
+    * Here is for Debian Squeeze:
+
+            $ apt-get update
+            $ apt-get install sudo python-dev gcc bzr subversion postgresql libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libxslt1-dev
 
 1. Initialize the buildout environment:
 
@@ -76,11 +79,10 @@ s
 TODO
 ----
 
-  * Don't call apt-get directly
-  * Use as much packages as available on PyPi (even if this imply intalling gcc on our local machine)
   * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
   * Consider using and contributing to http://pypi.python.org/pypi/anybox.recipe.openerp
   * Generate Apache config file dynamiccaly
+  * Get inspiration from http://github.com/kalymero/OpenERP-Buildout ?
 
 
 Author
