@@ -11,14 +11,12 @@ This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
 Installation
 ------------
 
-I know it's bad, but for convenience, all the commands below should be run as root.
-
 1. Install required dependencies with your favorite package installer.
 
     * Here is for Debian Squeeze:
 
-            $ apt-get update
-            $ apt-get install sudo python-dev gcc bzr subversion postgresql libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libxslt1-dev libpq-dev
+            $ sudo apt-get update
+            $ sudo apt-get install sudo python-dev gcc bzr subversion postgresql libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libxslt1-dev libpq-dev
 
 1. Initialize the buildout environment:
 
@@ -32,7 +30,7 @@ I know it's bad, but for convenience, all the commands below should be run as ro
 
 1. Start the PostgreSQL server:
 
-        $ /etc/init.d/postgresql restart
+        $ sudo /etc/init.d/postgresql restart
 
 1. Optionnaly, you can update all OpenERP modules of a given database. Here is the command for the `kevin_test` database:
 
