@@ -67,12 +67,17 @@ Note that some versions of Bazaar are affected by a bug ( http://bugs.launchpad.
 Apache
 ------
 
-If you want to serve OpenERP web client through Apache, an example configuration file is provided in `apache.conf`. As it add some caching, you need to activate the appropriate modules:
+If you want to serve OpenERP web client through Apache, a configuration file can be automaticcaly generated. Just add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`.
 
-        $ a2enmod cache disk_cache mem_cache expires
+As this add some caching, you need to activate the appropriate modules:
 
-Finally, don't forget to replace all occurences of `/home/openerp/openerp.buildout/parts/` in `apache.conf` by your appropriate buildout path.
-s
+        $ sudo a2enmod cache disk_cache mem_cache expires
+
+The apache config file is generated in `./parts/apache.conf` and can be activated right away:
+
+        $ sudo ln -s ./parts/apache.conf /etc/apache2/sites-enabled/
+        $ sudo /etc/init.d/apache2 reload
+
 
 TODO
 ----
