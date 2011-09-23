@@ -85,6 +85,7 @@ TODO
   * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
   * Consider using and contributing to http://pypi.python.org/pypi/anybox.recipe.openerp
   * Get inspiration from http://github.com/kalymero/OpenERP-Buildout ?
+  * Use hostout to create a fully-working OpenERP instance in the cloud from scratch. See: http://www.slideshare.net/djay/opps-i-deployed-it-again
 
 
 Author
