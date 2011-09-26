@@ -32,15 +32,11 @@ Installation
 
         $ sudo /etc/init.d/postgresql restart
 
-1. Optionnaly, you can update all OpenERP modules of a given database. Here is the command for the `kevin_test` database:
+1. Now you can launch the OpenERP server in the background:
 
-        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --addons-path=./parts/openerp/server/bin/addons --debug -u all -d kevin_test"
+        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --config=./parts/openerp_server.conf" &
 
-1. Then you can launch the OpenERP server in the background:
-
-        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --addons-path=./parts/openerp/server/bin/addons --debug" &
-
-1. Now you can run the web client the same way:
+1. Then you can run the web client the same way:
 
         $ su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
 
@@ -86,6 +82,11 @@ Here is how I did it on Debian Squeeze ([source](http://wiki.debian.org/Locale))
 
 Then I had to log out and back in to have the environment variables set to the new defaults.
 
+And here is another way of fixing this local issue (thanks Xavier for the tip !):
+
+        $ apt-get install --reinstall language-pack-fr
+        $ dpkg-reconfigure locales
+
 
 Apache
 ------
@@ -105,16 +106,28 @@ The apache config file is generated in `./parts/apache.conf` and can be activate
 TODO
 ----
 
+  * Automate Apache steps above ?
+  * Add shortcuts in `./bin` to launch the OpenERP server and web client
+  * Group all system initialization commands in one separate buildout config file. Basically eveything that has to be run as `root` will be moved there. The new `buildout.cfg` will then be able to be run without `root` privileges.
+  * Auto-update all modules of all databases on update.
   * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
   * Consider using and contributing to http://pypi.python.org/pypi/anybox.recipe.openerp
   * Get inspiration from http://github.com/kalymero/OpenERP-Buildout ?
   * Use hostout to create a fully-working OpenERP instance in the cloud from scratch. See: http://www.slideshare.net/djay/opps-i-deployed-it-again
+  * Auto-trigger the `pg_createcluster 8.4 main --start` command to fix broken PostgreSQL bad installs ?
+  * Automate local fix ?
 
 
 Author
 ------
 
  * [Kevin Deldycke](http://kevin.deldycke.com) - `kevin@deldycke.com`
+
+
+Contributors
+------------
+
+ * [Xavier Fernandez](http://twitter.com/#!/xavierfernandez)
 
 
 License
