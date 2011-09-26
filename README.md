@@ -65,7 +65,7 @@ TODO: use [hostout](http://pypi.python.org/pypi/collective.hostout) to create a 
 
 1. Deploy to EC2:
 
-        $ bin/hostout amazon-instance deploy
+        $ ./bin/hostout amazon-instance deploy
 
 
 Proxy
