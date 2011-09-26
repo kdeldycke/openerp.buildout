@@ -1,0 +1,20 @@
+# Python
+*.py[co]
+
+# Buildout
+bin/
+downloads/
+develop-eggs/
+eggs/
+fake-eggs/
+parts/
+.installed.cfg
+*egg-info
+
+# VIM
+*.swp
+
+# Emacs
+*~
+\#*
+.\#*
