@@ -115,7 +115,7 @@ TODO
   * Get inspiration from http://github.com/kalymero/OpenERP-Buildout ?
   * Use hostout to create a fully-working OpenERP instance in the cloud from scratch. See: http://www.slideshare.net/djay/opps-i-deployed-it-again
   * Auto-trigger the `pg_createcluster 8.4 main --start` command to fix broken PostgreSQL bad installs ?
-  * Automate local fix ?
+  * Automate locale fix ?
 
 
 Author
