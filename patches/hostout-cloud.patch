@@ -1,6 +1,6 @@
---- hostout/cloud/fabfile.py.orig	2011-09-26 16:03:20.871937792 +0000
-+++ hostout/cloud/fabfile.py	2011-09-26 16:03:49.101937806 +0000
-@@ -208,7 +208,7 @@
+--- hostout/cloud/fabfile.py.orig	2011-09-26 16:32:09.361938588 +0000
++++ hostout/cloud/fabfile.py	2011-09-26 16:34:30.491938652 +0000
+@@ -208,10 +208,11 @@
                        'KeyName': hostname,
              }
              object = driver.connection.request('/',params=params).object
@@ -9,3 +9,7 @@
              key_file = open(filename,"w")
              key_file.write(key)
              key_file.close()
++            os.chmod(filename, 0400)
+             args['ex_keyname'] = hostname
+             api.env.key_filename = filename
+
