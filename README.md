@@ -55,6 +55,19 @@ Install OpenERP in the cloud
 TODO: use [hostout](http://pypi.python.org/pypi/collective.hostout) to create a fully-working OpenERP instance in the cloud from scratch. See: http://www.slideshare.net/djay/opps-i-deployed-it-again
 
 
+1. Initialize the buildout environment:
+
+        $ python ./bootstrap.py --distribute
+
+1. Run buildout itself:
+
+        $ ./bin/buildout -N -c ./cloud.cfg
+
+1. Deploy to EC2:
+
+        $ bin/hostout amazon-instance deploy
+
+
 Proxy
 -----
 

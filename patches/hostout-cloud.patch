@@ -1,0 +1,11 @@
+--- hostout/cloud/fabfile.py.orig	2011-09-26 16:03:20.871937792 +0000
++++ hostout/cloudfabfile.py	2011-09-26 16:03:49.101937806 +0000
+@@ -208,7 +208,7 @@
+                       'KeyName': hostname,
+             }
+             object = driver.connection.request('/',params=params).object
+-            key = driver._findtext(object, "keyMaterial")
++            key = [x.text for x in object if x.tag.endswith('keyMaterial')][0]
+             key_file = open(filename,"w")
+             key_file.write(key)
+             key_file.close()
