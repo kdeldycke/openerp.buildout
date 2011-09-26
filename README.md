@@ -5,11 +5,11 @@ This is a buildout-based project to generate OpenERP instances for tests and dev
 
 It is far from mature enough to be used in production, but feel free to send patches to help me improve this situation.
 
+
+Install OpenERP on a local machine
+----------------------------------
+
 This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
-
-
-Installation
-------------
 
 1. Install required dependencies with your favorite package installer.
 
@@ -47,6 +47,12 @@ Installation
 1. Finally, if you want to kill OpenERP's server and client processes, you may use the command below:
 
         $ kill `ps -ef | grep openerp-shell | awk '{print $2}'`
+
+
+Install OpenERP in the cloud
+----------------------------
+
+TODO: use [hostout](http://pypi.python.org/pypi/collective.hostout) to create a fully-working OpenERP instance in the cloud from scratch. See: http://www.slideshare.net/djay/opps-i-deployed-it-again
 
 
 Proxy
@@ -113,7 +119,6 @@ TODO
   * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
   * Consider using and contributing to http://pypi.python.org/pypi/anybox.recipe.openerp
   * Get inspiration from http://github.com/kalymero/OpenERP-Buildout ?
-  * Use hostout to create a fully-working OpenERP instance in the cloud from scratch. See: http://www.slideshare.net/djay/opps-i-deployed-it-again
   * Auto-trigger the `pg_createcluster 8.4 main --start` command to fix broken PostgreSQL bad installs ?
   * Automate locale fix ?
 
