@@ -16,7 +16,7 @@ This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
     * Here is for Debian Squeeze:
 
             $ sudo apt-get update
-            $ sudo apt-get install sudo python-dev gcc bzr subversion postgresql libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libxslt1-dev libpq-dev
+            $ sudo apt-get install sudo python-dev gcc bzr subversion git postgresql libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libxslt1-dev libpq-dev
 
 1. Initialize the buildout environment:
 
@@ -61,11 +61,15 @@ TODO: use [hostout](http://pypi.python.org/pypi/collective.hostout) to create a 
 
 1. Run buildout itself:
 
-        $ ./bin/buildout -N -c ./cloud.cfg
+        $ ./bin/buildout -N
 
 1. Then we have to create an instance in the cloud:
 
         $ ./bin/hostout amazon-instance create
+
+1. Then we have to initialize the remote server:
+
+        $ ./bin/hostout amazon-instance bootstrap
 
 1. Deploy to EC2:
 
