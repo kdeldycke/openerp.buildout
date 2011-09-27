@@ -11,6 +11,11 @@ parts/
 .installed.cfg
 *egg-info
 
+# Hostout
+dist/
+hostoutversions.cfg
+*_key
+
 # VIM
 *.swp
 
