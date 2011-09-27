@@ -63,9 +63,28 @@ TODO: use [hostout](http://pypi.python.org/pypi/collective.hostout) to create a 
 
         $ ./bin/buildout -N -c ./cloud.cfg
 
+1. Then we have to create an instance in the cloud:
+
+        $ ./bin/hostout amazon-instance create
+
 1. Deploy to EC2:
 
         $ ./bin/hostout amazon-instance deploy
+
+1. To test, we can run our remote OpenERP shell:
+
+        $ bin/hostout amazon-instance run bin/openerp-shell
+
+1. And finally, once you don't need your cloud instance, you can destroy it:
+
+        $ ./bin/hostout amazon-instance destroy
+
+To fine-tune your cloud and choose the right instance, you can run these commands:
+
+        $ ./bin/hostout amazon-instance list_providers
+        $ ./bin/hostout amazon-instance list_nodes
+        $ ./bin/hostout amazon-instance list_sizes
+        $ ./bin/hostout amazon-instance list_images
 
 
 Proxy
