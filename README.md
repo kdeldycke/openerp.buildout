@@ -166,6 +166,7 @@ TODO
   * Consider using and contributing to http://pypi.python.org/pypi/anybox.recipe.openerp
   * Get inspiration from http://github.com/kalymero/OpenERP-Buildout ?
   * Automate locale fix ?
+  * Use mr.developer to download OpenERP components from bazaar ? It looks like mr.developer is smarter and can speed up the download process...
 
 
 Author
