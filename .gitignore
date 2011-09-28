@@ -8,7 +8,9 @@ develop-eggs/
 eggs/
 fake-eggs/
 parts/
+src/
 .installed.cfg
+.mr.developer.cfg
 *egg-info
 
 # Hostout
