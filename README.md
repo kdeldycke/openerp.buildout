@@ -165,7 +165,6 @@ TODO
   * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
   * Consider using and contributing to http://pypi.python.org/pypi/anybox.recipe.openerp
   * Get inspiration from http://github.com/kalymero/OpenERP-Buildout ?
-  * Auto-trigger the `pg_createcluster 8.4 main --start` command to fix broken PostgreSQL bad installs ?
   * Automate locale fix ?
 
 
