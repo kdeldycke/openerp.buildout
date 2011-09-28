@@ -13,16 +13,21 @@ This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
 
 1. Install required dependencies with your favorite package installer.
 
-    * Here is for Debian Squeeze:
+    * Here is for Debian and Ubuntu:
 
             $ sudo apt-get update
             $ sudo apt-get install sudo python-dev gcc bzr subversion git postgresql libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libxslt1-dev libpq-dev
+
+1. Get a copy of this buildout template:
+
+        $ git clone git://github.com/kdeldycke/openerp.buildout.git 
+        $ cd ./openerp.buildout
 
 1. Initialize the buildout environment:
 
         $ python ./bootstrap.py --distribute
 
-1. Set the `extend` parameter of the `[buildout]` section of `buildout.cfg` to either `profiles/openerp-trunk.cfg` or `profiles/openerp-6.0.cfg` depending of the version of OpenERP you want to work with.
+1. By default OpenERP 6.0 will be installed. If you need an other version, edit the `buildout.cfg` file and update the `extend` parameter of the `[buildout]` section.
 
 1. Run buildout itself:
 
@@ -49,15 +54,20 @@ This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
         $ kill `ps -ef | grep openerp-shell | awk '{print $2}'`
 
 
-Install OpenERP in the cloud
-----------------------------
+Install OpenERP in the cloud (work in progress)
+-----------------------------------------------
 
-TODO: use [hostout](http://pypi.python.org/pypi/collective.hostout) to create a fully-working OpenERP instance in the cloud from scratch. See: http://www.slideshare.net/djay/opps-i-deployed-it-again
+1. Get a copy of this buildout template:
 
+        $ sudo apt-get install git
+        $ git clone git://github.com/kdeldycke/openerp.buildout.git
+        $ cd ./openerp.buildout
 
 1. Initialize the buildout environment:
 
         $ python ./bootstrap.py --distribute
+
+1. Edit the `buildout.cfg` file and uncomment the line refering to `profiles/cloud.cfg`.
 
 1. Run buildout itself:
 
