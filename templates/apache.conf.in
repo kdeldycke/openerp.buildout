@@ -48,6 +48,13 @@
     CacheEnable disk /
     CacheIgnoreCacheControl On
     CacheIgnoreNoLastMod On
+    # Only activate disk cache for common static assets
+    # Source: http://journal.paul.querna.org/articles/2010/01/25/httpd-mod_cache-only-caching-your-homepage/
+    SetEnv no-cache
+    <LocationMatch "\.(ico|gif|jpe?g|png|js|css|flv|swf)$">
+        UnsetEnv no-cache
+    </LocationMatch>
+
 </VirtualHost>
 
 <VirtualHost *:80>
