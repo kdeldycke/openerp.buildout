@@ -20,7 +20,7 @@ This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
 
 1. Get a copy of this buildout template:
 
-        $ git clone git://github.com/kdeldycke/openerp.buildout.git 
+        $ git clone git://github.com/kdeldycke/openerp.buildout.git
         $ cd ./openerp.buildout
 
 1. Initialize the buildout environment:
@@ -67,7 +67,7 @@ Install OpenERP in the cloud (work in progress)
 
         $ python ./bootstrap.py --distribute
 
-1. Edit the `buildout.cfg` file and uncomment the line refering to `profiles/cloud.cfg`.
+1. Edit the `buildout.cfg` file and uncomment the line refering to `profiles/cloud.cfg`. Update the `[amazon-instance]` section with your Amazon AWS key and secret.
 
 1. Run buildout itself:
 
