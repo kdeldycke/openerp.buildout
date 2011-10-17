@@ -5,11 +5,13 @@ This is a buildout-based project to generate OpenERP instances for tests and dev
 
 It is far from mature enough to be used in production, but feel free to send patches to help me improve this situation.
 
+This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
+
+All the commands below should be performed with your normal user. There no need to be `root`. In fact, each time we need extra privileges we prefix our commands with `sudo`.
+
 
 Install OpenERP on a local machine
 ----------------------------------
-
-This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
 
 1. Install required dependencies with your favorite package installer.
 
@@ -39,11 +41,11 @@ This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
 
 1. Now you can launch the OpenERP server in the background:
 
-        $ su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --config=./parts/openerp_server.conf" &
+        $ sudo su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --config=./parts/openerp_server.conf" &
 
 1. Then you can run the web client the same way:
 
-        $ su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
+        $ sudo su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
 
 1. To play with your OpenERP instance, all you have to do is to point your browser to:
 
