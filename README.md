@@ -171,6 +171,7 @@ TODO
   * Use mr.developer to download OpenERP components from bazaar ? It looks like mr.developer is smarter and can speed up the download process...
   * Or look at http://pypi.python.org/pypi/checkoutmanager
   * Explore the use of OpenERP 6.1 web client as a module (see: http://twitter.com/#!/fpopenerp/status/118572842559340544 )
+  * Worth looking at isotoma.recipe.facts for extra info and automation: http://pypi.python.org/pypi/isotoma.recipe.facts
 
 
 Author
