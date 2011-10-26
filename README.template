@@ -1,0 +1,35 @@
+Note: This is a README template I put alongside specific openerp.buildout configuration I produce for my company's internal projects.
+
+
+Installation instructions
+=========================
+
+1. Get openerp.buildout
+-----------------------
+
+Get a local copy of the openerp.buildout boilerplate:
+
+        $ git clone git://github.com/kdeldycke/openerp.buildout.git
+        $ cd ./openerp.buildout
+
+
+2. Use our specific configuration
+---------------------------------
+
+Follow instructions found in the `README.md` file, but skip the `git clone` step as we already performed it above.
+
+In the `README.md` file, when it's time to update the `buildout.cfg` file, download our specific configuration set:
+
+        $ svn export --force https://svn.example.com/project/trunk/specific.buildout .
+
+Then add the `specific.cfg` to the `extend` parameter instead. Thus, your `buildout.cfg` should look like this:
+
+        [buildout]
+        extends =
+            profiles/openerp-6.0.cfg
+            specific.cfg
+
+        (...)
+
+Now you can proceed with the rest of instructions found in the `README.md` file.
+
