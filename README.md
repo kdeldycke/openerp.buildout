@@ -172,6 +172,7 @@ TODO
   * Or look at http://pypi.python.org/pypi/checkoutmanager
   * Explore the use of OpenERP 6.1 web client as a module (see: http://twitter.com/#!/fpopenerp/status/118572842559340544 )
   * Worth looking at isotoma.recipe.facts for extra info and automation: http://pypi.python.org/pypi/isotoma.recipe.facts
+  * Add a way to generate a big archive of all components used in that OpenERP build. This may be useful for customer's project delivery.
 
 
 Author
