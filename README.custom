@@ -18,18 +18,14 @@ Get a local copy of the openerp.buildout boilerplate:
 
 Follow instructions found in the `README.md` file, but skip the `git clone` step as we already performed it above.
 
-In the `README.md` file, when it's time to update the `buildout.cfg` file, download our specific configuration set:
+In the `README.md` file, when it's time to update the `buildout.cfg` file, just skip that step.
 
-        $ svn export --force https://svn.example.com/project/trunk/specific.buildout .
+Instead, download our specific configuration set:
 
-Then add the `specific.cfg` to the `extend` parameter instead. Thus, your `buildout.cfg` should look like this:
+        $ svn export --username=mylogin --force https://svn.example.com/project/trunk/custom.buildout .
 
-        [buildout]
-        extends =
-            profiles/openerp-6.0.cfg
-            specific.cfg
+Then, when the `README.md` ask you to run `./bin/buildout`, use the following command instead:
 
-        (...)
+        $ ./bin/buildout -c ./custom.cfg
 
-Now you can proceed with the rest of instructions found in the `README.md` file.
-
+After that you can proceed with the rest of instructions found in the `README.md` file.
