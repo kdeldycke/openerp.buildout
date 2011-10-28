@@ -47,6 +47,12 @@ Install OpenERP on a local machine
 
         $ sudo su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
 
+1. If you want to run the GTK client instead, you have to install X.org first:
+
+        $ sudo apt-get install xorg
+        $ sudo startx &
+        $ sudo su openerp -c "./bin/openerp-gtk-client-shell ./parts/openerp/gtk-client/bin/openerp-client.py" &
+
 1. To play with your OpenERP instance, all you have to do is to point your browser to:
 
         http://127.0.0.1:8080
