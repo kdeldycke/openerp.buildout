@@ -54,6 +54,10 @@ Install OpenERP on a local machine
 
         http://127.0.0.1:8080
 
+1. And to monitor everything's all right, keep an eye on the logs:
+
+        $ tail -F /var/log/openerp/openerp-*.log
+
 
 Install OpenERP in the cloud (work in progress)
 -----------------------------------------------
