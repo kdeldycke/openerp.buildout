@@ -1,0 +1,51 @@
+#!/bin/sh
+
+DAEMON='${buildout:directory}/bin/openerp-web-client.sh'
+NAME=openerp-web-client
+DESC='OpenERP Web Client'
+USER=openerp
+
+test -x $DAEMON || exit 0
+
+set -e
+
+case "$1" in
+start)
+echo -n "Starting $DESC: "
+
+start-stop-daemon --start --quiet --pidfile /var/run/$NAME.pid \
+--chuid $USER --background --make-pidfile \
+--exec $DAEMON
+
+echo "$NAME."
+;;
+
+stop)
+echo -n "Stopping $DESC: "
+
+start-stop-daemon --stop --quiet --pidfile /var/run/$NAME.pid \
+--oknodo
+
+echo "$NAME."
+;;
+
+restart|force-reload)
+echo -n "Restarting $DESC: "
+
+$0 stop
+
+sleep 1
+
+$0 start
+
+echo "$NAME."
+;;
+
+*)
+N=/etc/init.d/$NAME
+echo "Usage: $N {start|stop|restart|force-reload}" >&2
+exit 1
+;;
+esac
+
+exit 0
