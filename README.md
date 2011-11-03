@@ -39,13 +39,10 @@ Install OpenERP on a local machine
 
         $ sudo /etc/init.d/postgresql restart
 
-1. Now you can launch the OpenERP server in the background:
+1. Now you can launch the OpenERP server and web client:
 
-        $ sudo su openerp -c ./bin/openerp-server.sh &
-
-1. Then you can run the web client the same way:
-
-        $ sudo su openerp -c ./bin/openerp-web-client.sh &
+        $ sudo /etc/init.d/openerp-server restart
+        $ sudo /etc/init.d/openerp-web-client restart
 
 1. If you want to run the GTK client instead, you have to install X.org first:
 
@@ -56,10 +53,6 @@ Install OpenERP on a local machine
 1. To play with your OpenERP instance, all you have to do is to point your browser to:
 
         http://127.0.0.1:8080
-
-1. Finally, if you want to kill OpenERP's server and client processes, you may use the command below:
-
-        $ kill `ps -ef | grep openerp-shell | awk '{print $2}'`
 
 
 Install OpenERP in the cloud (work in progress)
