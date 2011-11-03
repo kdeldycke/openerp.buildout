@@ -41,11 +41,11 @@ Install OpenERP on a local machine
 
 1. Now you can launch the OpenERP server in the background:
 
-        $ sudo su openerp -c "./bin/openerp-shell ./parts/openerp/server/bin/openerp-server.py --config=./parts/openerp_server.conf" &
+        $ sudo su openerp -c ./bin/openerp-server.py &
 
 1. Then you can run the web client the same way:
 
-        $ sudo su openerp -c "./bin/openerp-shell ./parts/openerp/web-client/openerp-web.py" &
+        $ sudo su openerp -c ./bin/openerp-web-client.py &
 
 1. If you want to run the GTK client instead, you have to install X.org first:
 
