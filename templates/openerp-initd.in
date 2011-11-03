@@ -1,8 +1,8 @@
 #!/bin/sh
 
-DAEMON='${buildout:directory}/bin/openerp-web-client.sh'
-NAME=openerp-web-client
-DESC='OpenERP Web Client'
+DAEMON='${service_daemon}'
+NAME=${service_name}
+DESC='${service_desc}'
 USER=openerp
 
 test -x $DAEMON || exit 0
