@@ -1,3 +1,3 @@
 #!/bin/sh
 
-${buildout:directory}/bin/openerp-shell ${openerp:location}/server/openerp-server.py --config=${buildout:directory}/parts/openerp_server.conf > /var/log/openerp/openerp-server.log 2>&1
+${buildout:directory}/bin/openerp-shell ${openerp:location}/server/bin/openerp-server.py --config=${buildout:directory}/parts/openerp_server.conf > /var/log/openerp/openerp-server.log 2>&1
