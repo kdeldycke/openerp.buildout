@@ -18,7 +18,7 @@ Install OpenERP on a local machine
     * Here is for Debian:
 
             $ sudo apt-get update
-            $ sudo apt-get install sudo python-dev gcc bzr subversion git postgresql openoffice.org python-openoffice ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz libxslt1-dev libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libpq-dev
+            $ sudo apt-get install sudo python-dev gcc bzr subversion git postgresql openoffice.org python-openoffice python-cairo-dev ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz libxslt1-dev libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libpq-dev
 
 1. Get a copy of this buildout template:
 
