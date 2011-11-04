@@ -5,7 +5,7 @@ This is a buildout-based project to generate OpenERP instances for tests and dev
 
 It is far from mature enough to be used in production, but feel free to send patches to help me improve this situation.
 
-This was roughly tested with Ubuntu 11.04 and Debian Squeeze.
+This was roughly tested with Debian Squeeze.
 
 All the commands below should be performed with your normal user. There no need to be `root`. In fact, each time we need extra privileges we prefix our commands with `sudo`.
 
@@ -15,10 +15,10 @@ Install OpenERP on a local machine
 
 1. Install required dependencies with your favorite package installer.
 
-    * Here is for Debian and Ubuntu:
+    * Here is for Debian:
 
             $ sudo apt-get update
-            $ sudo apt-get install sudo python-dev gcc bzr subversion git postgresql ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz libxslt1-dev libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libpq-dev
+            $ sudo apt-get install sudo python-dev gcc bzr subversion git postgresql openoffice.org python-openoffice ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz libxslt1-dev libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libpq-dev
 
 1. Get a copy of this buildout template:
 
