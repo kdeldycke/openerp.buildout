@@ -14,7 +14,7 @@ Get a local copy of the openerp.buildout boilerplate:
 
 As the repository above is subjects to changes, freeze its code to a stable revision you intentionally identified:
 
-        $ git checkout a48dfb7391aaf7742db566536a490c3830b82a62
+        $ git checkout 6972b3f2ae37240c723355b5a1e50bc2270e3198
 
 
 2. Use our specific configuration
