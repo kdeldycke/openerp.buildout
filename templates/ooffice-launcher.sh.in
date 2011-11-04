@@ -1,0 +1,7 @@
+#!/bin/sh
+ooffice "-accept=socket,host=localhost,port=8100;urp;"
+export PYTHONPATH="/usr/lib/openoffice/program"
+
+# LibreOffice launcher
+# libreoffice -headless "-accept=socket,host=localhost,port=8100;urp;"
+# export PYTHONPATH="/usr/lib/libreoffice/program"
