@@ -12,6 +12,10 @@ Get a local copy of the openerp.buildout boilerplate:
         $ git clone git://github.com/kdeldycke/openerp.buildout.git
         $ cd ./openerp.buildout
 
+As the repository above is subjects to changes, freeze its code to a stable revision you intentionally identified:
+
+        $ git checkout a48dfb7391aaf7742db566536a490c3830b82a62
+
 
 2. Use our specific configuration
 ---------------------------------
@@ -20,9 +24,9 @@ Follow instructions found in the `README.md` file, but skip the `git clone` step
 
 In the `README.md` file, when it's time to update the `buildout.cfg` file, just skip that step.
 
-Instead, download our specific configuration set:
+Instead, download our specific configuration set at a frozen revision:
 
-        $ svn export --username=mylogin --force https://svn.example.com/project/trunk/custom.buildout .
+        $ svn export --username=mylogin --revision XXX --force https://svn.example.com/project/trunk/custom.buildout .
 
 Then, when the `README.md` ask you to run `./bin/buildout`, use the following command instead:
 
