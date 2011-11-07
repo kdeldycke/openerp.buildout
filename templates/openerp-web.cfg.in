@@ -29,8 +29,8 @@ server.profile_dir = "profile"
 
 # logging
 #log.screen = False
-#log.access_file = "/var/log/openerp-web/access.log"
-#log.error_file = "/var/log/openerp-web/error.log"
+log.access_file = "/var/log/openerp/openerp-web-client-access.log"
+log.error_file = "/var/log/openerp/openerp-web-client-error.log"
 log.access_level = "INFO"
 log.error_level = "INFO"
 # Replaces the cherrypy-created FileHandler by a TimedRotatingFileHandler,

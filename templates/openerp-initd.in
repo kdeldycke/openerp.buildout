@@ -18,7 +18,7 @@ echo -n "Starting $DESC: "
 
 start-stop-daemon --start --quiet --pidfile /var/run/$NAME.pid \
 --chuid $USER --background --make-pidfile \
---exec $DAEMON $DAEMON_ARGS
+--exec $DAEMON -- $DAEMON_ARGS
 
 echo "$NAME."
 ;;
