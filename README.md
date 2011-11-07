@@ -59,6 +59,16 @@ Install OpenERP on a local machine
         $ tail -F /var/log/openerp/openerp-*.log
 
 
+Command helpers
+---------------
+
+There are script helper available in `./bin` to let you launch OpenERP's server (`./bin/openerp-server.sh`) and web client (`./bin/openerp-web-client.sh`) easily with the right user and configuration.
+
+For example, if you need to update all modules of a database, you can use the following command:
+
+        $ ./bin/openerp-server.sh -d my_database_id -u all
+
+
 Install OpenERP in the cloud (work in progress)
 -----------------------------------------------
 

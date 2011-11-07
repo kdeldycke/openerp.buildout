@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo su - openerp -c "exec ${buildout:directory}/bin/openerp-shell ${openerp:location}/server/bin/openerp-server.py --config=${openerp-config-server:output}"
+sudo su - openerp -c "exec ${buildout:directory}/bin/openerp-shell ${openerp:location}/server/bin/openerp-server.py --config=${openerp-config-server:output} $*"
