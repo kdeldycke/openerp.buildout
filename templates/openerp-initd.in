@@ -1,9 +1,12 @@
 #!/bin/sh
 
 DAEMON='${service_daemon}'
+DAEMON_ARGS='${service_daemon_args}'
 NAME=${service_name}
 DESC='${service_desc}'
 USER=openerp
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
 
 test -x $DAEMON || exit 0
 
@@ -13,9 +16,9 @@ case "$1" in
 start)
 echo -n "Starting $DESC: "
 
-/sbin/start-stop-daemon --start --quiet --pidfile /var/run/$NAME.pid \
+start-stop-daemon --start --quiet --pidfile /var/run/$NAME.pid \
 --chuid $USER --background --make-pidfile \
---exec $DAEMON
+--exec $DAEMON $DAEMON_ARGS
 
 echo "$NAME."
 ;;
@@ -23,7 +26,7 @@ echo "$NAME."
 stop)
 echo -n "Stopping $DESC: "
 
-/sbin/start-stop-daemon --stop --quiet --pidfile /var/run/$NAME.pid \
+start-stop-daemon --stop --quiet --pidfile /var/run/$NAME.pid \
 --oknodo
 
 echo "$NAME."
