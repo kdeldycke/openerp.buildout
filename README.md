@@ -58,6 +58,11 @@ Install OpenERP on a local machine
 
         $ tail -F /var/log/openerp/openerp-*.log
 
+1. And if you want the server and the web client starts with the machine, do:
+
+        $ sudo update-rc.d openerp-server defaults 90
+        $ sudo update-rc.d openerp-web-client defaults 91
+
 
 Command helpers
 ---------------
