@@ -75,6 +75,24 @@ For example, if you need to update all modules of a database, you can use the fo
 
         $ ./bin/openerp-server.sh -d my_database_id -u all
 
+All those scripts are based on `./bin/openerp-shell` which is a simple wrapper around your system's Python interpreter, only it add under its scope all modules locally installed by this buildout. So if you're looking to use whatever Python module buildout install for you, forget about your system's Python interpreter and use `./bin/openerp-shell` instead, see:
+
+        $ python
+        Python 2.6.6 (r266:84292, Dec 26 2010, 22:31:48) 
+        [GCC 4.4.5] on linux2
+        Type "help", "copyright", "credits" or "license" for more information.
+        >>> import mako
+        Traceback (most recent call last):
+          File "<stdin>", line 1, in <module>
+        ImportError: No module named mako
+        >>> 
+
+        $ ./bin/openerp-shell
+        >>> import mako
+        >>> repr(mako)
+        "<module 'mako' from '/home/openerp.buildout/eggs/Mako-0.4.2-py2.6.egg/mako/__init__.pyc'>"
+        >>> 
+
 
 Install OpenERP in the cloud (work in progress)
 -----------------------------------------------
