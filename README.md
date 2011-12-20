@@ -198,7 +198,7 @@ As the default generated configuration file add some caching, you need to activa
 The apache config file is generated in `./parts/apache.conf` and can be activated right away:
 
         $ sudo ln -s ./parts/apache.conf /etc/apache2/sites-enabled/
-        $ sudo /etc/init.d/apache2 reload
+        $ sudo /etc/init.d/apache2 restart
 
 
 TODO
