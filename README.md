@@ -193,7 +193,7 @@ Then add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` sec
 
 As the default generated configuration file add some caching, you need to activate the appropriate modules:
 
-        $ sudo a2enmod cache disk_cache mem_cache expires
+        $ sudo a2enmod cache disk_cache mem_cache expires ssl
 
 The apache config file is generated in `./parts/apache.conf` and can be activated right away:
 
