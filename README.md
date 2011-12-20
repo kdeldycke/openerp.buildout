@@ -183,9 +183,16 @@ And here is another way of fixing this local issue (thanks Xavier for the tip !)
 Apache
 ------
 
-If you want to serve OpenERP web client through Apache, a configuration file can be automaticcaly generated. Just add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`.
+If you want to serve OpenERP web client through Apache, a configuration file can be automaticcaly generated.
 
-As this add some caching, you need to activate the appropriate modules:
+First install Apache itself:
+
+        $ apt-get install apache2
+
+
+Then add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, and set the `web-domain` variable to your public domain name, as demonstrated in the `custom.cfg` file.
+
+As the default generated configuration file add some caching, you need to activate the appropriate modules:
 
         $ sudo a2enmod cache disk_cache mem_cache expires
 
