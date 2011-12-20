@@ -189,7 +189,6 @@ First install Apache itself:
 
         $ apt-get install apache2
 
-
 Then add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, and set the `web-domain` variable to your public domain name, as demonstrated in the `custom.cfg` file.
 
 As the default generated configuration file add some caching, you need to activate the appropriate modules:
