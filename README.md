@@ -78,20 +78,20 @@ For example, if you need to update all modules of a database, you can use the fo
 All those scripts are based on `./bin/openerp-shell` which is a simple wrapper around your system's Python interpreter, only it add under its scope all modules locally installed by this buildout. So if you're looking to use whatever Python module buildout install for you, forget about your system's Python interpreter and use `./bin/openerp-shell` instead, see:
 
         $ python
-        Python 2.6.6 (r266:84292, Dec 26 2010, 22:31:48) 
+        Python 2.6.6 (r266:84292, Dec 26 2010, 22:31:48)
         [GCC 4.4.5] on linux2
         Type "help", "copyright", "credits" or "license" for more information.
         >>> import mako
         Traceback (most recent call last):
           File "<stdin>", line 1, in <module>
         ImportError: No module named mako
-        >>> 
+        >>>
 
         $ ./bin/openerp-shell
         >>> import mako
         >>> repr(mako)
         "<module 'mako' from '/home/openerp.buildout/eggs/Mako-0.4.2-py2.6.egg/mako/__init__.pyc'>"
-        >>> 
+        >>>
 
 
 Install OpenERP in the cloud (work in progress)
@@ -191,21 +191,10 @@ First install Apache itself:
 
 Then add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, and set the `web-domain` variable to your public domain name, as demonstrated in the `custom.cfg` file.
 
-As the default generated configuration file add some caching, you need to activate the appropriate modules:
-
-        $ sudo a2enmod cache disk_cache mem_cache expires ssl
-
-The apache config file is generated in `./parts/apache.conf` and can be activated right away:
-
-        $ sudo ln -s ./parts/apache.conf /etc/apache2/sites-available/
-        $ sudo a2ensite apache
-        $ sudo /etc/init.d/apache2 restart
-
 
 TODO
 ----
 
-  * Automate Apache steps above ?
   * Group all system initialization commands in one separate buildout config file. Basically eveything that has to be run as `root` will be moved there. The new `buildout.cfg` will then be able to be run without `root` privileges.
   * Auto-update all modules of all databases on update.
   * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
