@@ -2,8 +2,8 @@
     ServerName ${openerp:web-domain}
 
     SSLEngine on
-    SSLCertificateFile ${ssl-certs:path_prefix}/self-signed.pem
-    SSLCertificateKeyFile ${ssl-certs:path_prefix}/self-signed.pem
+    SSLCertificateFile ${buildout:directory}/parts/self-signed.pem
+    SSLCertificateKeyFile ${buildout:directory}/parts/self-signed.pem
 
     DocumentRoot ${openerp:location}/web-client
     ProxyPass /openerp/static/ !
