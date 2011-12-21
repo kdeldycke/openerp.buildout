@@ -20,7 +20,7 @@ Install OpenERP on a local machine
     * Here is for Debian:
 
             $ sudo apt-get update
-            $ sudo apt-get install sudo python-dev gcc bzr subversion git postgresql openoffice.org python-openoffice python-cairo-dev ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz libxslt1-dev libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libpq-dev
+            $ sudo apt-get install sudo python-dev gcc bzr subversion git postgresql ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz libxslt1-dev libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libpq-dev
 
 1. Get a copy of this buildout template:
 
@@ -187,9 +187,22 @@ If you want to serve OpenERP web client through Apache, a configuration file can
 
 First install Apache itself:
 
-        $ apt-get install apache2
+        $ sudo apt-get install apache2
 
 Then add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, and set the `web-domain` variable to your public domain name, as demonstrated in the `custom.cfg` file.
+
+
+
+Aeroo
+-----
+
+(Aeroo)[http://www.alistek.com/index.php?option=com_content&id=93%3Aaeroo-reports-for-open-erp-5-a-6] is a reporting engine for OpenERP.
+
+To let this buildout install and configure it, you first have to install OpenOffice (or LibreOffice) and some other dependencies:
+
+        $ sudo apt-get install openoffice.org python-openoffice python-cairo-dev
+
+Then add `profiles/aeroo.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, as demonstrated in the `custom.cfg` file.
 
 
 TODO
