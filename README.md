@@ -66,8 +66,8 @@ Install OpenERP on a local machine
         $ sudo update-rc.d openerp-web-client defaults 91
 
 
-Command helpers
----------------
+Command helpers (or how to make your daily usage of buildout painless)
+----------------------------------------------------------------------
 
 There are script helper available in `./bin` to let you launch OpenERP's server (`./bin/openerp-server.sh`) and web client (`./bin/openerp-web-client.sh`) easily with the right user and configuration.
 
