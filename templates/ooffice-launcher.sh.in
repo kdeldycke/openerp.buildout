@@ -1,7 +1,19 @@
 #!/bin/sh
-ooffice "-accept=socket,host=localhost,port=8100;urp;"
-export PYTHONPATH="/usr/lib/openoffice/program"
 
-# LibreOffice launcher
-# libreoffice -headless "-accept=socket,host=localhost,port=8100;urp;"
-# export PYTHONPATH="/usr/lib/libreoffice/program"
+# Default to LibreOffice configuration
+COMMAND='libreoffice -headless'
+OFFICEPATH='/usr/lib/libreoffice/program'
+
+# Search for OpenOffice if we're on an old system
+which ooffice
+if [ $? -le 0 ]; then
+    COMMAND='ooffice'
+    OFFICEPATH='/usr/lib/openoffice/program'
+fi
+
+# Augment the default search path for module files.
+export PYTHONPATH="$PYTHONPATH:$OFFICEPATH"
+
+# Launch an Office instance in headless mode
+$COMMAND "-accept=socket,host=localhost,port=8100;urp;"
+
