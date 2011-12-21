@@ -69,7 +69,7 @@ Install OpenERP on a local machine
 Command helpers (or how to make your daily usage of buildout painless)
 ----------------------------------------------------------------------
 
-### `bin/buildout`
+### bin/buildout
 
 This is the command to run to build a new environement.
 
@@ -78,7 +78,7 @@ This is also the command you call to update your environment.
 In fact you can safely call it whenever you want. buildout implement an internal mecanism that keeps tracks of what it installed and configured before, that's why it's safe. And that's also why you can re-call it if it crashed in the middle of its execution.
 
 
-### `bin/openerp-server.sh` & `bin/openerp-web-client.sh`
+### bin/openerp-server.sh & bin/openerp-web-client.sh
 
 There are script helper available in `./bin` to let you launch OpenERP's server (`./bin/openerp-server.sh`) and web client (`./bin/openerp-web-client.sh`) easily with the right user and configuration.
 
@@ -87,7 +87,7 @@ For example, if you need to update all modules of a database, you can use the fo
         $ ./bin/openerp-server.sh -d my_database_id -u all
 
 
-### `bin/openerp-shell`
+### bin/openerp-shell
 
 All those scripts are based on `./bin/openerp-shell` which is a simple wrapper around your system's Python interpreter, only it add under its scope all modules locally installed by this buildout. So if you're looking to use whatever Python module buildout install for you, forget about your system's Python interpreter and use `./bin/openerp-shell` instead, see:
 
