@@ -196,7 +196,7 @@ Then add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` sec
 Aeroo
 -----
 
-(Aeroo)[http://www.alistek.com/index.php?option=com_content&id=93%3Aaeroo-reports-for-open-erp-5-a-6] is a reporting engine for OpenERP.
+(http://www.alistek.com/index.php?option=com_content&id=93%3Aaeroo-reports-for-open-erp-5-a-6)[Aeroo] is a reporting engine for OpenERP.
 
 To let this buildout install and configure it, you first have to install OpenOffice (or LibreOffice) and some other dependencies:
 
