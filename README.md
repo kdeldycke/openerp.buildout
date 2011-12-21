@@ -69,11 +69,25 @@ Install OpenERP on a local machine
 Command helpers (or how to make your daily usage of buildout painless)
 ----------------------------------------------------------------------
 
+### `bin/buildout`
+
+This is the command to run to build a new environement.
+
+This is also the command you call to update your environment.
+
+In fact you can safely call it whenever you want. buildout implement an internal mecanism that keeps tracks of what it installed and configured before, that's why it's safe. And that's also why you can re-call it if it crashed in the middle of its execution.
+
+
+### `bin/openerp-server.sh` & `bin/openerp-web-client.sh`
+
 There are script helper available in `./bin` to let you launch OpenERP's server (`./bin/openerp-server.sh`) and web client (`./bin/openerp-web-client.sh`) easily with the right user and configuration.
 
 For example, if you need to update all modules of a database, you can use the following command:
 
         $ ./bin/openerp-server.sh -d my_database_id -u all
+
+
+### `bin/openerp-shell`
 
 All those scripts are based on `./bin/openerp-shell` which is a simple wrapper around your system's Python interpreter, only it add under its scope all modules locally installed by this buildout. So if you're looking to use whatever Python module buildout install for you, forget about your system's Python interpreter and use `./bin/openerp-shell` instead, see:
 
@@ -92,6 +106,71 @@ All those scripts are based on `./bin/openerp-shell` which is a simple wrapper a
         >>> repr(mako)
         "<module 'mako' from '/home/openerp.buildout/eggs/Mako-0.4.2-py2.6.egg/mako/__init__.pyc'>"
         >>>
+
+
+Configuration extensions
+------------------------
+
+### Aeroo
+
+[Aeroo](http://www.alistek.com/index.php?option=com_content&id=93%3Aaeroo-reports-for-open-erp-5-a-6) is a reporting engine for OpenERP.
+
+To let this buildout install and configure it, you first have to install OpenOffice (or LibreOffice) and some other dependencies:
+
+        $ sudo apt-get install openoffice.org python-openoffice python-cairo-dev
+
+Then add `profiles/aeroo.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, as demonstrated in the `custom.cfg` file.
+
+
+### Apache
+
+If you want to serve OpenERP web client through Apache, a configuration file can be automaticcaly generated.
+
+First install Apache itself:
+
+        $ sudo apt-get install apache2
+
+Then add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, and set the `web-domain` variable to your public domain name, as demonstrated in the `custom.cfg` file.
+
+
+Troubleshooting
+---------------
+
+### Locale
+
+You may encounter this issue when Bazaar commands are run:
+
+        bzr: warning: unsupported locale setting
+          bzr could not set the application locale.
+          Although this should be no problem for bzr itself,
+          it might cause problems with some plugins.
+          To investigate the issue, look at the output
+          of the locale(1p) tool available on POSIX systems.
+
+This can be fixed by forcing your locale to more sane defaults.
+
+Here is how I did it on Debian Squeeze ([source](http://wiki.debian.org/Locale)):
+
+        $ echo "LANG=en_US.UTF-8" >> /etc/default/locale
+        $ echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+        $ locale-gen
+
+Then I had to log out and back in to have the environment variables set to the new defaults.
+
+And here is another way of fixing this local issue (thanks Xavier for the tip !):
+
+        $ apt-get install --reinstall language-pack-fr
+        $ dpkg-reconfigure locales
+
+
+### Proxy
+
+Behind a proxy ? Just set the appropriate environment variables to let Subversion and Bazaar pass through it:
+
+        $ export  http_proxy=http://10.0.2.1:8080
+        $ export https_proxy=http://10.0.2.1:8080
+
+Note that [some versions of Bazaar are affected by a bug](http://bugs.launchpad.net/bzr/+bug/558343) which doesn't let you pass a proxy. In my case, the bzr-2.1.2-1 package available on my Debian Squeeze was affected by such a bug. To fix this, I just applied the patch proposed at http://code.edge.launchpad.net/~lifeless/bzr/bug-558343-wrong-host-with-proxy/+merge/24938 .
 
 
 Install OpenERP in the cloud (work in progress)
@@ -139,70 +218,6 @@ To fine-tune your cloud and choose the right instance, you can run these command
         $ ./bin/hostout amazon-instance list_nodes
         $ ./bin/hostout amazon-instance list_sizes
         $ ./bin/hostout amazon-instance list_images
-
-
-Proxy
------
-
-Behind a proxy ? Just set the appropriate environment variables to let Subversion and Bazaar pass through it:
-
-        $ export  http_proxy=http://10.0.2.1:8080
-        $ export https_proxy=http://10.0.2.1:8080
-
-Note that [some versions of Bazaar are affected by a bug](http://bugs.launchpad.net/bzr/+bug/558343) which doesn't let you pass a proxy. In my case, the bzr-2.1.2-1 package available on my Debian Squeeze was affected by such a bug. To fix this, I just applied the patch proposed at http://code.edge.launchpad.net/~lifeless/bzr/bug-558343-wrong-host-with-proxy/+merge/24938 .
-
-
-Locale
-------
-
-You may encounter this issue when Bazaar commands are run:
-
-        bzr: warning: unsupported locale setting
-          bzr could not set the application locale.
-          Although this should be no problem for bzr itself,
-          it might cause problems with some plugins.
-          To investigate the issue, look at the output
-          of the locale(1p) tool available on POSIX systems.
-
-This can be fixed by forcing your locale to more sane defaults.
-
-Here is how I did it on Debian Squeeze ([source](http://wiki.debian.org/Locale)):
-
-        $ echo "LANG=en_US.UTF-8" >> /etc/default/locale
-        $ echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-        $ locale-gen
-
-Then I had to log out and back in to have the environment variables set to the new defaults.
-
-And here is another way of fixing this local issue (thanks Xavier for the tip !):
-
-        $ apt-get install --reinstall language-pack-fr
-        $ dpkg-reconfigure locales
-
-
-Apache
-------
-
-If you want to serve OpenERP web client through Apache, a configuration file can be automaticcaly generated.
-
-First install Apache itself:
-
-        $ sudo apt-get install apache2
-
-Then add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, and set the `web-domain` variable to your public domain name, as demonstrated in the `custom.cfg` file.
-
-
-
-Aeroo
------
-
-[Aeroo](http://www.alistek.com/index.php?option=com_content&id=93%3Aaeroo-reports-for-open-erp-5-a-6) is a reporting engine for OpenERP.
-
-To let this buildout install and configure it, you first have to install OpenOffice (or LibreOffice) and some other dependencies:
-
-        $ sudo apt-get install openoffice.org python-openoffice python-cairo-dev
-
-Then add `profiles/aeroo.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, as demonstrated in the `custom.cfg` file.
 
 
 TODO
