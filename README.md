@@ -223,6 +223,7 @@ To fine-tune your cloud and choose the right instance, you can run these command
 TODO
 ----
 
+  * Separate the web client from the gtk client install in profiles/openerp-6.0.cfg
   * Group all system initialization commands in one separate buildout config file. Basically eveything that has to be run as `root` will be moved there. The new `buildout.cfg` will then be able to be run without `root` privileges.
   * Auto-update all modules of all databases on update.
   * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
