@@ -109,13 +109,12 @@ Configuration extensions
 
 To install the GTK fat client, install first some dependencies:
 
-        $ sudo apt-get install ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz
+        $ sudo apt-get install xorg ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz
 
 Then add `profiles/openerp-gtk-6.0.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`.
 
-When the buildout finish the installation, before running the GTK client itself, you have to install X.org first:
+When the buildout finish the installation, before running the GTK client itself, you have to laucnch X.org first:
 
-        $ sudo apt-get install xorg
         $ sudo startx &
         $ sudo su openerp -c "./bin/openerp-gtk-client-shell ./parts/openerp/gtk-client/bin/openerp-client.py" &
 
