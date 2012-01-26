@@ -113,7 +113,7 @@ To install the GTK fat client, install first some dependencies:
 
 Then add `profiles/openerp-gtk-6.0.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`.
 
-When the buildout finish the installation, before running the GTK client itself, you have to laucnch X.org first:
+When the buildout finish the installation, before running the GTK client itself, you have to launch X.org first:
 
         $ sudo startx &
         $ sudo su openerp -c "./bin/openerp-gtk-client-shell ./parts/openerp/gtk-client/bin/openerp-client.py" &
