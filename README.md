@@ -20,7 +20,7 @@ Install OpenERP on a local machine
     * Here is for Debian:
 
             $ sudo apt-get update
-            $ sudo apt-get install sudo python-dev gcc bzr subversion git postgresql ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz libxslt1-dev libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libpq-dev
+            $ sudo apt-get install sudo python-dev gcc bzr subversion git postgresql libxslt1-dev libyaml-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libxml2-dev libpq-dev
 
 1. Get a copy of this buildout template:
 
@@ -46,12 +46,6 @@ Install OpenERP on a local machine
         $ sudo /etc/init.d/openerp-server restart
         $ sudo /etc/init.d/openerp-web-client restart
 
-1. If you want to run the GTK client instead, you have to install X.org first:
-
-        $ sudo apt-get install xorg
-        $ sudo startx &
-        $ sudo su openerp -c "./bin/openerp-gtk-client-shell ./parts/openerp/gtk-client/bin/openerp-client.py" &
-
 1. To play with your OpenERP instance, all you have to do is to point your browser to:
 
         http://127.0.0.1:8080
@@ -60,7 +54,7 @@ Install OpenERP on a local machine
 
         $ tail -F /var/log/openerp/openerp-*.log
 
-1. And if you want the server and the web client starts with the machine, do:
+1. Finally to let the server and the web client starts with the machine, do:
 
         $ sudo update-rc.d openerp-server defaults 90
         $ sudo update-rc.d openerp-web-client defaults 91
@@ -110,6 +104,21 @@ All those scripts are based on `./bin/openerp-shell` which is a simple wrapper a
 
 Configuration extensions
 ------------------------
+
+### OpenERP GTK client
+
+To install the GTK fat client, install first some dependencies:
+
+        $ sudo apt-get install ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz
+
+Then add `profiles/openerp-gtk-6.0.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`.
+
+When the buildout finish the installation, before running the GTK client itself, you have to install X.org first:
+
+        $ sudo apt-get install xorg
+        $ sudo startx &
+        $ sudo su openerp -c "./bin/openerp-gtk-client-shell ./parts/openerp/gtk-client/bin/openerp-client.py" &
+
 
 ### Aeroo
 
@@ -223,7 +232,6 @@ To fine-tune your cloud and choose the right instance, you can run these command
 TODO
 ----
 
-  * Separate the web client from the gtk client install in profiles/openerp-6.0.cfg
   * Group all system initialization commands in one separate buildout config file. Basically eveything that has to be run as `root` will be moved there. The new `buildout.cfg` will then be able to be run without `root` privileges.
   * Auto-update all modules of all databases on update.
   * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
