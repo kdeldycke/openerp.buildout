@@ -5,9 +5,9 @@ This is a buildout-based project to generate OpenERP instances for tests and dev
 
 It is far from mature enough to be used in production, but feel free to send patches to help me improve this situation.
 
-This was roughly tested with Debian Squeeze and is likely to work on Ubuntu.
+This was tested with Debian Squeeze and is likely to work on Ubuntu.
 
-All the commands below should be performed with your normal user. There no need to be `root`. In fact, each time we need extra privileges we prefix our commands with `sudo`.
+All the commands below should be performed with your normal user. Each time we need extra privileges we prefix our commands with `sudo`.
 
 I aim to make this script less messy and sysadmin-friendly but this goal often conflicts with making a fully-automated script. However I think these two goals can be reached by making openerp.buildout a little bit more modular. But I'm not sure how, so I need ideas and contributions from people using it in real life.
 
@@ -60,8 +60,11 @@ Install OpenERP on a local machine
         $ sudo update-rc.d openerp-web-client defaults 91
 
 
-Command helpers (or how to make your daily usage of buildout painless)
-----------------------------------------------------------------------
+Command helpers
+---------------
+
+Or how to make your daily usage of buildout painless.
+
 
 ### bin/buildout
 
