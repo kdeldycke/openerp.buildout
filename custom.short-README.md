@@ -12,7 +12,7 @@ Get a local copy of the openerp.buildout boilerplate:
         $ git clone git://github.com/kdeldycke/openerp.buildout.git
         $ cd ./openerp.buildout
 
-As the repository above is subjects to changes, freeze its code to a stable revision you intentionally identified:
+As the repository above is subject to changes, freeze its code to the following stable revision:
 
         $ git checkout 6972b3f2ae37240c723355b5a1e50bc2270e3198
 
