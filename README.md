@@ -132,6 +132,14 @@ To let this buildout install and configure it, you first have to install OpenOff
 
 Then add `profiles/aeroo.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, as demonstrated in the `custom.cfg` file.
 
+Finally, you have to start the office server in a headless mode:
+
+        $ sudo /etc/init.d/office-server restart
+
+And to let the office starts with the machine, do:
+
+        $ sudo update-rc.d office-server defaults 90
+
 
 ### Apache
 
