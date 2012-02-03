@@ -24,7 +24,6 @@ Create a `myproject.cfg` file and put there the following content:
 
         [buildout]
         extends =
-            profiles/prod.cfg
             profiles/openerp-web-6.0.cfg
             profiles/aeroo.cfg
 
@@ -34,15 +33,6 @@ Create a `myproject.cfg` file and put there the following content:
             lp:openerp-spain/6.0 spain-addons
         server_addons +=
             spain-addons/*
-
-
-        [openerp-config-server]
-        input = ${buildout:directory}/myproject_openerp_server.conf.in
-
-Then we'll create a specific configuration file for the OpenERP server. This file is a copy of the default template, but we'll just set there the PostgreSQL database password in clear (`openuser`):
-
-        $ cp ./templates/openerp_server.conf.in ./myproject_openerp_server.conf.in
-        $ sed -i 's/db_password = False/db_password = openuser/g' ./myproject_openerp_server.conf.in
 
 
 Install OpenERP with buildout
@@ -60,8 +50,6 @@ Install OpenERP with buildout
 1. Run buildout itself:
 
         $ sudo ./bin/buildout -c ./myproject.cfg
-
-    At one point during the installation, you'll be prompted by PostreSQL to set a password for the OpenERP database user. Use the same password you hard-coded above in the `myproject_openerp_server.conf.in` file (`openuser` in our case).
 
 1. Start the PostgreSQL server:
 
