@@ -1,6 +1,6 @@
 [options]
 # OpenERP 6.1 parameters
-addons_path = ${openerp:location}/server/bin/addons
+addons_path = ${openerp:location}/server/openerp/addons
 admin_passwd = admin
 assert_exit_level = error
 cache_timeout = 100000
@@ -56,6 +56,3 @@ xmlrpc_port = 8069
 xmlrpcs = True
 xmlrpcs_interface =
 xmlrpcs_port = 8071
-
-# OpenERP 6.0 parameters
-root_path = ${openerp:location}/server/bin
