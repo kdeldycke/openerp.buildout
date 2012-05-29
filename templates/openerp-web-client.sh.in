@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo su - openerp -c "exec ${buildout:directory}/bin/openerp-shell ${openerp:location}/web-client/openerp-web --config=${openerp-config-web-client:output} $*"
+sudo su - openerp -c "exec ${buildout:directory}/bin/openerp-shell ${openerp:location}/web-client/openerp-web $*"
