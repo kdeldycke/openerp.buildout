@@ -1,5 +1,4 @@
 [options]
-# OpenERP 6.1 parameters
 addons_path = ${openerp:location}/server/openerp/addons
 admin_passwd = admin
 assert_exit_level = error
