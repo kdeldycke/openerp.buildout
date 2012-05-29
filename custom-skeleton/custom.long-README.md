@@ -24,7 +24,7 @@ Create a `myproject.cfg` file and put there the following content:
 
         [buildout]
         extends =
-            profiles/openerp-web-6.0.cfg
+            profiles/openerp-web.cfg
             profiles/aeroo.cfg
 
 

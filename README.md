@@ -31,8 +31,6 @@ Install OpenERP on a local machine
 
         $ python ./bootstrap.py --distribute
 
-1. By default OpenERP 6.0 will be installed for development. If you need an other version, or the production profile, edit the `buildout.cfg` file and update the `extend` parameter of the `[buildout]` section accordingly.
-
 1. Run buildout itself:
 
         $ sudo ./bin/buildout
