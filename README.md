@@ -1,7 +1,7 @@
 openerp.buildout
 ================
 
-This is a buildout-based project to generate OpenERP 6.1 instances for tests and development, on a Debian 6.0 Squeeze.
+This is a buildout-based project to generate **OpenERP 6.1 instances** for tests and development, on a **Debian 6.0 Squeeze**.
 
 I'm not sure it's ready for production, but feel free to send patches to help me improve this situation.
 
@@ -110,7 +110,7 @@ To let this buildout install and configure it, you first have to install OpenOff
 
         $ sudo apt-get install openoffice.org python-openoffice python-cairo-dev
 
-Then add `profiles/aeroo.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, as demonstrated in the `custom.cfg` file.
+Then add `profiles/aeroo.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`.
 
 Finally, you have to start the office server in a headless mode:
 
@@ -129,7 +129,7 @@ First install Apache itself:
 
         $ sudo apt-get install apache2
 
-Then add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, and set the `web-domain` variable to your public domain name, as demonstrated in the `custom.cfg` file.
+Then add `profiles/apache.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`, and set the `web-domain` variable to your public domain name.
 
 
 Troubleshooting
@@ -225,7 +225,6 @@ TODO
   * Separate server and web profile.
   * Group all system initialization commands in one separate buildout config file. Basically eveything that has to be run as `root` will be moved there. The new `buildout.cfg` will then be able to be run without `root` privileges.
   * Auto-update all modules of all databases on update.
-  * Don't call the patch command directly, use http://pypi.python.org/pypi/collective.recipe.patch
   * Consider using and contributing to http://pypi.python.org/pypi/anybox.recipe.openerp
   * Get inspiration from http://github.com/kalymero/OpenERP-Buildout ?
   * Automate locale fix ?
