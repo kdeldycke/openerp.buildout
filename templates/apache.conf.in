@@ -5,24 +5,6 @@
     SSLCertificateFile ${buildout:directory}/parts/self-signed.crt
     SSLCertificateKeyFile ${buildout:directory}/parts/private.key
 
-    DocumentRoot ${openerp:location}/web-client
-    ProxyPass /openerp/static/ !
-    ProxyPass /openobject/static/ !
-    Alias /openerp/static/    ${openerp:location}/web-client/addons/openerp/static/
-    Alias /openobject/static/ ${openerp:location}/web-client/openobject/static/
-
-    ExpiresActive On
-    ExpiresByType text/css "now plus 1 month"
-    ExpiresByType image/* "now plus 1 month"
-    ExpiresByType application/x-shockwave-flash "now plus 1 month"
-
-    <LocationMatch "(^/openerp/j18n/|\.js$)">
-        # Only force expiration of javascript that is in a file, else it breaks OpenERP UI.
-        # Cache javascript i18n too.
-        ExpiresByType text/javascript "now plus 1 month"
-        ExpiresByType application/javascript "now plus 1 month"
-    </LocationMatch>
-
     <Proxy *>
         Order deny,allow
         Allow from all
@@ -38,22 +20,12 @@
     ProxyPassReverse / http://127.0.0.1:8080/
     ProxyPreserveHost On
     RequestHeader set "X-Forwarded-Proto" "https"
+
     # Fix IE problem (http error 408/409)
     SetEnv proxy-nokeepalive 1
 
     ErrorLog /var/log/apache2/${openerp:web-domain}-ssl-error.log
     CustomLog /var/log/apache2/${openerp:web-domain}-ssl-access.log combined
-
-    CacheIgnoreHeaders Set-Cookie
-    CacheEnable disk /
-    CacheIgnoreCacheControl On
-    CacheIgnoreNoLastMod On
-    # Only activate disk cache for common static assets
-    # Source: http://journal.paul.querna.org/articles/2010/01/25/httpd-mod_cache-only-caching-your-homepage/
-    SetEnv no-cache
-    <LocationMatch "\.(ico|gif|jpe?g|png|js|css|flv|swf)$">
-        UnsetEnv no-cache
-    </LocationMatch>
 
 </VirtualHost>
 
