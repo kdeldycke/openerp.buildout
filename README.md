@@ -31,8 +31,6 @@ Install OpenERP on a local machine
 
         $ python ./bootstrap.py --distribute
 
-1. By default OpenERP 6.0 will be installed for development. If you need an other version, or the production profile, edit the `buildout.cfg` file and update the `extend` parameter of the `[buildout]` section accordingly.
-
 1. Run buildout itself:
 
         $ sudo ./bin/buildout
@@ -114,7 +112,7 @@ To install the GTK fat client, install first some dependencies:
 
         $ sudo apt-get install xorg ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz
 
-Then add `profiles/openerp-gtk-6.0.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`.
+Then add `profiles/openerp-gtk.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`.
 
 When the buildout finish the installation, before running the GTK client itself, you have to launch X.org first:
 
