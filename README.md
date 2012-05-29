@@ -108,20 +108,6 @@ All those scripts are based on `./bin/openerp-shell` which is a simple wrapper a
 Configuration extensions
 ------------------------
 
-### OpenERP GTK client
-
-To install the GTK fat client, install first some dependencies:
-
-        $ sudo apt-get install xorg ghostscript graphviz python-hippocanvas python-libxml2 python-libxslt1 python-gtk2 python-glade2 python-matplotlib python-pygraphviz
-
-Then add `profiles/openerp-gtk-6.0.cfg` to the `extend` parameter of the `[buildout]` section of `buildout.cfg`.
-
-When the buildout finish the installation, before running the GTK client itself, you have to launch X.org first:
-
-        $ sudo startx &
-        $ sudo su openerp -c "./bin/openerp-gtk-client-shell ./parts/openerp/gtk-client/bin/openerp-client.py" &
-
-
 ### Aeroo
 
 [Aeroo](http://www.alistek.com/index.php?option=com_content&id=93%3Aaeroo-reports-for-open-erp-5-a-6) is a reporting engine for OpenERP.
