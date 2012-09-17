@@ -234,6 +234,7 @@ TODO
   * Worth looking at isotoma.recipe.facts for extra info and automation: http://pypi.python.org/pypi/isotoma.recipe.facts
   * Add a way to generate a big archive of all components used in that OpenERP build. This may be useful for customer's project delivery.
   * It maybe worth checking this: http://pypi.python.org/pypi/cloudinitd
+  * Use `pip install --user` as explained at http://opensourcehacker.com/2012/09/16/recommended-way-for-sudo-free-installation-of-python-software-with-virtualenv/comment-page-1/#comment-7325 ?
 
 
 Author
