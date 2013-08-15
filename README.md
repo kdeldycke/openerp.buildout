@@ -238,16 +238,11 @@ TODO
   * Use http://pypi.python.org/pypi/mr.scripty to generate fully-generic configuration.
 
 
-Author
-------
+Author & Contributors
+---------------------
 
- * [Kevin Deldycke](http://kevin.deldycke.com) - `kevin@deldycke.com`
-
-
-Contributors
-------------
-
- * [Xavier Fernandez](http://twitter.com/#!/xavierfernandez)
+ * [Kevin Deldycke](https://github.com/kdeldycke)
+ * [Xavier Fernandez](https://github.com/xavfernandez)
 
 
 License
